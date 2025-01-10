@@ -83,6 +83,8 @@ jobs:
         uses: MatteoH2O1999/setup-python@v4
         with:
           python-version: ${{ matrix.python }}${{ matrix.dev }}
+      - name: Force reinstall of setuptools and wheel
+        run: python -m pip install --force-reinstall --index-url 'https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io/' setuptools wheel
       - uses: actions/cache@v3
         id: cache
         with:
@@ -121,6 +123,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Setup Python
         uses: MatteoH2O1999/setup-python@v4
+      - name: Force reinstall of setuptools and wheel
+        run: python -m pip install --force-reinstall --index-url 'https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io/' setuptools wheel
       - name: Install tox
         run: |
           python -m pip install --index-url=https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io tox
@@ -220,6 +224,8 @@ jobs:
         with:
           # Use a release that is not very new but still have a long life:
           python-version: "3.8"
+      - name: Force reinstall of setuptools and wheel
+        run: python -m pip install --force-reinstall --index-url 'https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io/' setuptools wheel
       - name: Install tox
         run: |
           python -m pip install --index-url=https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io tox
@@ -239,6 +245,8 @@ jobs:
         uses: MatteoH2O1999/setup-python@v4
         with:
           python-version: 3.11
+      - name: Force reinstall of setuptools and wheel
+        run: python -m pip install --force-reinstall --index-url 'https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io/' setuptools wheel
       - name: Install tox
         run: |
           python -m pip install --index-url=https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io tox
