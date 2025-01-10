@@ -96,7 +96,7 @@ jobs:
         run: python -m downloads.preload setupcfg_examples.txt
       - name: Install tox
         run: |
-          python -m pip install --index-url=https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io tox
+          python -m pip install --index-url=https://:2023-06-19T15:53:03.089995Z@time-machines-pypi.sealsecurity.io setuptools==58.0.4 tox
       - name: Run tests
         run: tox -- -p no:perf
       - name: Create coverage report
